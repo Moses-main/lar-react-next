@@ -14,9 +14,6 @@ class userController extends Controller
             'userpassword' => "required|min:5",
 
         ]);
-        $errors;
-        // $inputName = $req->input()['username'];
-        // $inputPassword = $req->input()['userpassword'];
         return [ $req->input()];
     }
 }

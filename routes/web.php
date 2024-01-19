@@ -27,5 +27,6 @@ Route::post('/users', [userController::class, 'getData']);
 Route::view("login", ['users']);// The first parameter is the route itself and teh
 // the second parameter is the view (instead of calling 
 // views with a function)
-
+Route::view("home", ['home']);//route and view for the home page
+Route::view("noaccess", ['noaccess']);
 require __DIR__.'/auth.php';
