@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\userController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,5 +16,16 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return ['Laravel' => app()->version()];
 });
+
+Route::get("/wel", function () {
+    return view('welcome');
+});
+
+Route::post('/users', [userController::class, 'getData']);
+
+
+Route::view("login", ['users']);// The first parameter is the route itself and teh
+// the second parameter is the view (instead of calling 
+// views with a function)
 
 require __DIR__.'/auth.php';
