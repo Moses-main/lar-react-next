@@ -3,17 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User;
 
-class userController extends Controller
+class UserController extends Controller
 {
     //
-     function getData(Request $req){
-        // validate the input parameters
-        $req->validate([
-            'username' => "required",
-            'userpassword' => "required|min:5",
-
-        ]);
-        return [ $req->input()];
+    function getData(){
+        return User::all();
     }
 }

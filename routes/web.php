@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\userController;
+use App\Http\Controllers\UserController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,6 +22,7 @@ Route::get("/wel", function () {
 });
 
 Route::post('/users', [userController::class, 'getData']);
+Route::get('/users',[UserController::class,"getData"]);
 
 
 Route::view("login", ['users']);// The first parameter is the route itself and teh
