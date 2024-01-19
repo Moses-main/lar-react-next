@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,21 +14,4 @@ use App\Http\Controllers\UserController;
 |
 */
 
-Route::get('/', function () {
-    return ['Laravel' => app()->version()];
-});
-
-Route::get("/wel", function () {
-    return view('welcome');
-});
-
-Route::post('/users', [userController::class, 'getData']);
-Route::get('/users',[UserController::class,"getData"]);
-
-
-Route::view("login", ['users']);// The first parameter is the route itself and teh
-// the second parameter is the view (instead of calling 
-// views with a function)
-Route::view("home", ['home']);//route and view for the home page
-Route::view("noaccess", ['noaccess']);
-require __DIR__.'/auth.php';
+Route::get("/user", [UserController::class, "index"]);
