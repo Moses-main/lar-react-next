@@ -11,7 +11,7 @@ class userController extends Controller
         // validate the input parameters
         $req->validate([
             'username' => "required",
-            'userpassword' => "required",
+            'userpassword' => "required|min:5",
 
         ]);
         $errors;

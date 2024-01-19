@@ -1,19 +1,15 @@
 <h1>Users Login</h1>
-{{-- Checking if error exist --}}
-@if ($errors->any())
-{{-- fetching all the errors that exist --}}
-@foreach ($errors->all() as $err)
-{{-- using a list to show them --}}
-<li style="color: red">{{$err}}</li>
-@endforeach
-@endif
+
 <form action="users" method="post">
     @csrf
     <input type="text" name="username" placeholder="Enter your username">
     <br>
-    {{-- <span>@error('username'){{$message}}@enderror</span> --}}
+    <span style="color: red">@error('username'){{$message}}@enderror</span>
+
     <br>
-    <input type="text" name="userpassword" placeholder="Enter your password">
+    <input  type="text" name="userpassword" placeholder="Enter your password">
+    <br>
+    <span style="color: red">@error('userpassword'){{$message}}@enderror</span>
     <br>
     <button type="submit">Send</button>
 </form>
