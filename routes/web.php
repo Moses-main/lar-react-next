@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UploadController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,8 +15,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return ['Laravel' => app()->version()];
-});
+Route::get("/", [UserController::class, "index"]);
 
-require __DIR__.'/auth.php';
+Route::view('/push','upload');
+Route::post('/upload', 'UploadController@upload');
+Route::post('/upload', [UploadController::class, 'index']);
