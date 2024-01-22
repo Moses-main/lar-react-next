@@ -1,6 +1,6 @@
 # How to save data in the database
 
-0.  Ensure you have the right database settings
+## Ensure you have the right database settings
 
         `
 
@@ -11,7 +11,7 @@
     DB_USERNAME=root
     DB_PASSWORD=`
 
-1.  Make html form in view
+## Make html form in view
 
 Create a new blade file with the name `addmembers` then add the following lines of code
 
@@ -93,7 +93,8 @@ Use the code below to create a migration for your table and then add the followi
 
 Then create your schema
 
-`/
+<pre>
+`
     public function up(): void
     {
         Schema::create('members', function (Blueprint $table) {
@@ -104,6 +105,7 @@ Then create your schema
             $table->timestamps();
         });
     }`
+</pre>
 
 Then run the following command
 
