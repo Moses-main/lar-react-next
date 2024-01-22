@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UploadController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\memberController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,6 +18,8 @@ use App\Http\Controllers\UserController;
 
 Route::get("/", [UserController::class, "index"]);
 
-Route::view('/push','upload');
-Route::post('/upload', 'UploadController@upload');
+// Route::view('/','profile');
+// Route::post('/upload', 'UploadController@upload');
 Route::post('/upload', [UploadController::class, 'index']);
+
+Route::get("/",[memberController::class, 'show']);
