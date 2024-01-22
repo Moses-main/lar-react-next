@@ -16,10 +16,10 @@ use App\Http\Controllers\memberController;
 |
 */
 
-Route::get("/", [UserController::class, "index"]);
+// Route::get("/", [UserController::class, "index"]);
 
-// Route::view('/','profile');
+Route::view('/','addmembers');
 // Route::post('/upload', 'UploadController@upload');
-Route::post('/upload', [UploadController::class, 'index']);
+Route::post('/add', [memberController::class, 'addData']);
 
-Route::get("/",[memberController::class, 'show']);
+// Route::get("/",[memberController::class, 'show']);
