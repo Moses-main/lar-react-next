@@ -10,7 +10,8 @@ class memberController extends Controller
 {
     //
     function show(){
-        $data = User::all();
-        return view('member',['members'=>$data]);
+        $data = User::paginate(5);
+        // return view('member',['members'=>$data]);
+        return view('list', ['users'=>$data]);
     }
 }

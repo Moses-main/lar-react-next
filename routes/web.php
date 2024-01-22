@@ -18,8 +18,8 @@ use App\Http\Controllers\memberController;
 
 Route::get("/", [UserController::class, "index"]);
 
-Route::view('/','profile');
+// Route::view('/','profile');
 // Route::post('/upload', 'UploadController@upload');
 Route::post('/upload', [UploadController::class, 'index']);
 
-Route::get("/member",[memberController::class, 'show']);
+Route::get("/",[memberController::class, 'show']);
