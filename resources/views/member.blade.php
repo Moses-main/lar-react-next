@@ -1,10 +1,18 @@
 <h1 style="text-align: center">The members home page</h1>
 {{-- {{$data}} --}}
-@foreach ($members as $item)
-    <li>{{$item['name']}}</li>
-    <li>{{$item['email']}}</li>
-    <li>{{$item['password']}}</li>
-    {{-- <li>{{$item['email']}}</li> --}}
-    <li></li>
-    <li></li>
+<table border="1">
+<tr>
+    <td>Name </td>
+    <td>Email </td>
+    <td>Operation </td>
+</tr>
+    @foreach ($members as $item)
+
+    <tr>
+        <td>{{$item['name']}} </td>
+        <td>{{$item['email']}}</td>
+        <td><a href={{"delete/".$item['id']}}>Delete</a></td>
+    </tr>
+    
 @endforeach
+</table>

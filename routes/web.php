@@ -18,8 +18,9 @@ use App\Http\Controllers\memberController;
 
 // Route::get("/", [UserController::class, "index"]);
 
-Route::view('/','addmembers');
+Route::view('/new','addmembers');
 // Route::post('/upload', 'UploadController@upload');
 Route::post('/add', [memberController::class, 'addData']);
 
-// Route::get("/",[memberController::class, 'show']);
+Route::get("/",[memberController::class, 'show']);
+Route::get("delete/{id}", [memberController::class, 'delete']);
