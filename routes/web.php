@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UploadController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\memberController;
-
+use App\Http\Controllers\EmployeeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,3 +24,6 @@ Route::post('/add', [memberController::class, 'addData']);
 
 Route::get("/",[memberController::class, 'show']);
 Route::get("delete/{id}", [memberController::class, 'delete']);
+
+// THE ROUTES FOR THE JOIN SECTION OF THE COURSE
+Route::get("show",[EmployeeController::class, "show"]);
