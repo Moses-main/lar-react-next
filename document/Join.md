@@ -46,4 +46,11 @@ Then to get a data from a specific table then use the following code by specifyi
 
 The above codes generate the data fro m the dogs table.
 
+Then to join database with the `WHERE` condition, we make use of the below code:
+
+`return DB::table("members")
+->join("dogs","members.id","=","dogs.id")
+->where("breed","domestic")
+->get();`
+
 ### Remeber that this would only work on tables with interrelated data or fields.
