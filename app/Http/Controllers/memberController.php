@@ -4,29 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Member;
-// use App\Models\User;
 
-class memberController extends Controller
+class MemberController extends Controller
 {
     //
-    function addData(Request $req){
-        $member = new Member();
-        $member->name = $req->name;
-        $member->email = $req->email;
-        $member->address = $req->address;
-        $member->save();
-        return redirect("/");
+    public function index(){
+        return Member::all();
     }
-
-    function show(){
-        $data = Member::all();
-        return view('member', ['members' => $data]);
-    }
-
-    function delete($id){
-        $data = Member::all();
-        // Member::delete($id);
-        Member::find($id)->delete();
-        return redirect("/");
-        }
 }
